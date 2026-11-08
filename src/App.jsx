@@ -11,9 +11,9 @@ const celebrations = [
   {
     key: 'barat',
     title: 'BARAT',
-    day: 'Monday',
-    date: '28',
-    month: 'Dec 2026',
+    day: 'Sunday',
+    date: '29',
+    month: 'Nov 2026',
     time: '7:00 PM Onwards',
     venue: 'Jiyo Banquet Hall',
     address: 'Taragarh Road in Shahdara Town, Shahdara, Lahore',
@@ -22,9 +22,9 @@ const celebrations = [
   {
     key: 'walima',
     title: 'WALIMA',
-    day: 'Tuesday',
-    date: '29',
-    month: 'Dec 2026',
+    day: 'Monday',
+    date: '30',
+    month: 'Nov 2026',
     time: '8:00 PM Onwards',
     venue: 'Sardar Banquet Hall',
     address: 'Outfall Rd, St Nagar, Lahore',
@@ -332,15 +332,12 @@ function App() {
                 <div className="text-2xl font-serif font-bold text-[#2C1D12] tracking-wide flex items-center justify-center gap-3">
                   <span>Mohsin</span> 
                   <span className="text-[#A37B4C] font-light italic text-xl">&amp;</span> 
-                  <span>Liza</span>
+                  <span>Iqra</span>
                 </div>
                 <div className="w-16 h-[1px] bg-[#A37B4C]/40 mx-auto my-3"></div>
                 <div className="space-y-1">
                   <p className='text-xs text-[#4A3B2C] tracking-widest uppercase font-semibold'>
-                    28 – 29 December 2026
-                  </p>
-                  <p className='text-xs text-[#5C4532] font-medium tracking-wide'>
-                    Grand Palace Hall, Lahore
+                    29 – 30 November 2026
                   </p>
                 </div>
               </div>
@@ -416,15 +413,15 @@ function App() {
             <div className="space-y-1">
               <h3 className="font-serif text-2xl text-[#2C1D12] font-medium tracking-wide">Mohsin</h3>
               <p className="text-[11px] text-[#7E5C38] uppercase tracking-widest font-semibold">Son of</p>
-              <p className="text-xs text-slate-700 font-serif">Mr. & Mrs. [Father Name]</p>
+              <p className="text-xs text-slate-700 font-serif">Mr. Muhammad Islam & Mrs. Rehana Kosar</p>
             </div>
 
             <div className="text-amber-700/60 font-serif italic text-lg">&amp;</div>
 
             <div className="space-y-1">
-              <h3 className="font-serif text-2xl text-[#2C1D12] font-medium tracking-wide">Liza</h3>
+              <h3 className="font-serif text-2xl text-[#2C1D12] font-medium tracking-wide">Iqra</h3>
               <p className="text-[11px] text-[#7E5C38] uppercase tracking-widest font-semibold">Daughter of</p>
-              <p className="text-xs text-slate-700 font-serif">Mr. & Mrs. [Father Name]</p>
+              <p className="text-xs text-slate-700 font-serif">Mr. Shokat & Mrs. Nusrat</p>
             </div>
           </div>
         </div>
