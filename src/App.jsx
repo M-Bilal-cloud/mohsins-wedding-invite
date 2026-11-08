@@ -6,6 +6,12 @@ import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Refresh par hamesha top se start ho:
+// ScrollTrigger apni scroll memory se purani position restore karta hai, usay band karo
+// ('manual' browser ki scrollRestoration bhi manual kar deta hai)
+ScrollTrigger.clearScrollMemory('manual');
+if (typeof window !== 'undefined') window.scrollTo(0, 0);
+
 // Section 3 data
 const celebrations = [
   {
@@ -93,7 +99,10 @@ function App() {
 
   // Images aane ke baad layout final hota hai, isliye ScrollTrigger refresh
   useEffect(() => {
-    if (loaded) ScrollTrigger.refresh();
+    if (loaded) {
+      window.scrollTo(0, 0);
+      ScrollTrigger.refresh();
+    }
   }, [loaded]);
 
   // Jab tak card open (flap) nahi hota, page scroll lock rahega
@@ -114,10 +123,20 @@ function App() {
   }, [flap]);
 
   useEffect(() => {
-    if ('scrollRestoration' in window) {
+    // scrollRestoration window par nahi, window.history par hota hai
+    if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
     }
     window.scrollTo(0, 0);
+
+    // Page band/refresh hone se pehle top par le jao, taake browser top hi restore kare
+    const goTop = () => window.scrollTo(0, 0);
+    window.addEventListener('beforeunload', goTop);
+    window.addEventListener('pageshow', goTop);
+    return () => {
+      window.removeEventListener('beforeunload', goTop);
+      window.removeEventListener('pageshow', goTop);
+    };
   }, []);
 
   useGSAP(() => {
