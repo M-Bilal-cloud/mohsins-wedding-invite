@@ -113,6 +113,13 @@ function App() {
     };
   }, [flap]);
 
+  useEffect(() => {
+    if ('scrollRestoration' in window) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  }, []);
+
   useGSAP(() => {
     // 1. Radar pulse infinite animation
     const pulses = radarPulsesRef.current;
